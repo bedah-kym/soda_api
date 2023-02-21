@@ -5,7 +5,7 @@ from . import views
 app_name="softdrinks"
 
 urlpatterns=[
-    path('home/',views.drinks_list,name='home'),
-    path('soda/<str:name>/',views.single_drink,name='single_drink'),
+    path('home/',views.DrinksList.as_view(),name='home'),
+    path('soda/<str:name>/',views.SingleDrink.as_view(),name='single_drink'),
 
 ]
