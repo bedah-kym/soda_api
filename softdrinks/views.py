@@ -8,12 +8,16 @@ from rest_framework import authentication,permissions
 from rest_framework import generics
 from .models import soda
 from .permissions import IsStaffEditorPermissions
+from .authentication import TokenAuthentication
 import json
 
 class DrinksList(generics.ListCreateAPIView):
     queryset = soda.objects.all()
     serializer_class = sodaserializer
-    authentication_classes = [authentication.SessionAuthentication]
+    authentication_classes = [
+        authentication.SessionAuthentication,
+        TokenAuthentication
+        ]
     permission_classes =[IsStaffEditorPermissions]
 
     
@@ -21,7 +25,7 @@ class DrinksList(generics.ListCreateAPIView):
 class SingleDrink(generics.RetrieveUpdateDestroyAPIView):
     queryset = soda.objects.all()
     serializer_class = sodaserializer
-    authentication_classes = [authentication.SessionAuthentication]
+    authentication_classes = [authentication.SessionAuthentication,TokenAuthentication]
     permission_classes =[IsStaffEditorPermissions]
 
     

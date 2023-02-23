@@ -18,11 +18,14 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth/', obtain_auth_token),
     #path('accounts/', include('allauth.urls')),
     path('softdrinks/', include('softdrinks.urls')),
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
