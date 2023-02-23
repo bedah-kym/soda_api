@@ -1,13 +1,41 @@
 import requests
+import json
 
-endpoint1 = "https://httpbin.org/anything"
-endpoint2 = "http://127.0.0.1:9100/softdrinks/home/"
+def get():
+    endpoint = "http://127.0.0.1:9100/softdrinks/home/"
+    response = requests.get(endpoint)
+    return response.json()
 
-response = requests.post(endpoint2,json={
-            "brand": "sapa",
-            "description": "black",
-            "quantity": "750ml",
-            "price": 3500
- })
+def create():
+    endpoint = "http://127.0.0.1:9100/softdrinks/home/"
+    response = requests.post(endpoint,json={
+                "brand": " white ass",
+                "description": "white as ass",
+                "quantity": "750ml",
+                "price":250
+    })
 
-print(response.json())
+    return response.json()
+
+def detail(pk):
+    endpoint = f"http://127.0.0.1:9100/softdrinks/soda/{pk}/"
+    response = requests.get(endpoint)
+    return response.json()
+
+def update(pk):
+    endpoint = f"http://127.0.0.1:9100/softdrinks/soda/{pk}/"
+    response = requests.put(endpoint,json={
+                "brand": "new fanta ",
+                "description": "black as ass",
+                "quantity": "750ml",
+                "price":250
+    })
+    return response.json()
+
+#print(get())
+
+#print(detail(1))
+
+#print(update(1))
+
+print(create())
