@@ -32,10 +32,10 @@ def update(pk):
     })
     return response.json()
 
-#print(get())
+print(get())
 
 #print(detail(1))
 
 #print(update(1))
 
-print(create())
+#print(create())
