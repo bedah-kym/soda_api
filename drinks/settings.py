@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'softdrinks',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'allauth',
     'allauth.account',

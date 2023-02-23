@@ -5,3 +5,4 @@ class sodaserializer (serializers.ModelSerializer):
     class Meta:
         model = soda
         fields = ['brand','description','quantity','price']
+ 
