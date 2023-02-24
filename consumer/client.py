@@ -21,7 +21,7 @@ def create():
     headers={"Authorization":"bearer 35fd13777168eb84e0e41413fd3f7cda55e7fe3b"}
     endpoint = "http://127.0.0.1:9100/softdrinks/home/"
     response = requests.post(endpoint,headers=headers,json={
-                "brand": " new white ass",
+                "brand": " brand #white ass",
                 "description": "white as ass",
                 "quantity": "750ml",
                 "price":25
