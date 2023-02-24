@@ -25,6 +25,7 @@ urlpatterns = [
     path('auth/', obtain_auth_token),
     #path('accounts/', include('allauth.urls')),
     path('softdrinks/', include('softdrinks.urls')),
+    path('api-auth/', include('rest_framework.urls')),
 
 ]
 
