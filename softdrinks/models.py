@@ -7,7 +7,7 @@ user = settings.AUTH_USER_MODEL
 
 # Create your models here.
 class soda(models.Model):
-    Owner = models.ForeignKey(user,null=True,default=1,on_delete=models.SET_NULL)
+    Owner = models.ForeignKey(user,default=1,on_delete=models.CASCADE)
     brand = models.CharField(max_length=100,null=False,validators=[validate_title])
     description = models.TextField(default="no description added here",validators=[validate_length])
     quantity = models.CharField(max_length=100,blank=True,validators=[validate_char])
