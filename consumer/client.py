@@ -6,13 +6,14 @@ def auth():
     response = requests.post(endpoint,json={"username":"apiadmin","password":"admin"})
     if response.status_code == 200 :
         token=response
-        return token.json()# {'token': '35fd13777168eb84e0e41413fd3f7cda55e7fe3b'}
+        return token.json()# {'token': '35fd13777168eb84e0e41413fd3f7cda55e7fe3b'} {regular:'b0676d1646866d32709fee2c21cc657720dab4b6'}
     return response.status_code
 
 def get():
     token=auth()
     strtoken=(token['token'])
     endpoint = "http://127.0.0.1:9100/softdrinks/home/"
+
     headers={"Authorization":f"bearer {strtoken}"}
     response = requests.get(endpoint,headers=headers)
     return response.json()
